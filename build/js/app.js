@@ -1,0 +1,1 @@
+"use strict";!function(){console.log("sb");new Proxy({a:1,b:2},{get:function(n,t){return"c"===t?"我是自定义的一个结果":n[t]},set:function(n,t,e){n[t]=4===e?"我是自定义的一个结果":e}})}(jQuery);
