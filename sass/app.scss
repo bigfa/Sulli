@@ -833,3 +833,10 @@ label {
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 10px;
 }
+
+.mapHeader {
+  padding: 0px 0 50px;
+  &--title {
+    margin: 0;
+  }
+}

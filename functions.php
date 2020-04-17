@@ -1,5 +1,5 @@
 <?php
-define('SULLI_VERSION', '1.0.0');
+define('SULLI_VERSION', '0.0.1');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -75,7 +75,6 @@ function sulli_register_styles()
     $theme_version = wp_get_theme()->get('Version');
 
     wp_enqueue_style('sulli-style', get_template_directory_uri() . '/build/css/app.css', array(), $theme_version);
-
 }
 
 add_action('wp_enqueue_scripts', 'sulli_register_styles');
@@ -94,7 +93,6 @@ function sulli_register_scripts()
 
     wp_enqueue_script('sulli-js', get_template_directory_uri() . '/build/js/app.js', array('jquery'), $theme_version, false);
     wp_script_add_data('sulli-js', 'async', true);
-
 }
 
 add_action('wp_enqueue_scripts', 'sulli_register_scripts');
@@ -135,11 +133,9 @@ function sulli_is_comment_by_post_author($comment = null)
         if (!empty($user) && !empty($post)) {
 
             return $comment->user_id === $post->post_author;
-
         }
     }
     return false;
-
 }
 
 /**
@@ -156,7 +152,6 @@ function sulli_filter_comment_reply_link($link)
 
     $link = str_replace('class=\'', 'class=\'do-not-scroll ', $link);
     return $link;
-
 }
 
 //add_filter( 'comment_reply_link', 'twentytwenty_filter_comment_reply_link' );
@@ -171,21 +166,24 @@ function sulli_filter_comment_reply_link($link)
 function sulli_no_js_class()
 {
 
-    ?>
-	<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
-	<?php
+?>
+    <script>
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+    <?php
 
 }
 
 add_action('wp_head', 'sulli_no_js_class');
 
-function aladdin_get_background_image($post_id, $width = null, $height = null) {
+function aladdin_get_background_image($post_id, $width = null, $height = null)
+{
     if (has_post_thumbnail($post_id)) {
         $timthumb_src = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'full');
         $output       = $timthumb_src[0];
-    } elseif (get_post_meta($post_id,'_banner',true)) {
-        $output = get_post_meta($post_id,'_banner',true);
-    }else {
+    } elseif (get_post_meta($post_id, '_banner', true)) {
+        $output = get_post_meta($post_id, '_banner', true);
+    } else {
         $content         = get_post_field('post_content', $post_id);
         $defaltthubmnail = '//static.fatesinger.com/2018/05/q3wyes7va2ehq59y.JPG';
         preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
@@ -202,33 +200,34 @@ function aladdin_get_background_image($post_id, $width = null, $height = null) {
 }
 
 
-function sulli_comment($comment, $args, $depth){
+function sulli_comment($comment, $args, $depth)
+{
     $GLOBALS['comment'] = $comment;
     switch ($comment->comment_type):
         case 'pingback':
         case 'trackback':
-            ?>
-            <li <?php comment_class();?> id="comment-<?php comment_ID();?>">
-            <div class="pingback-content"><?php comment_author_link();?></div>
+    ?>
+            <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+                <div class="pingback-content"><?php comment_author_link(); ?></div>
             <?php
             break;
         default:
             global $post;
             ?>
-        <li class="comment sulliComment" itemtype="http://schema.org/Comment" data-id="<?php comment_ID()?>" itemscope="" itemprop="comment">
-            <div id="comment-<?php comment_ID()?>" class="sulliComment--block">
-                <div class="sulliComment--info">
-                        <img height=48 width=48 alt="<?php echo $comment->comment_author;?>的头像" aria-label="<?php echo $comment->comment_author;?>的头像" src="<?php echo get_avatar_url($comment, array('size'=>48));?>" class="avatar" />
-                        <span class="sulliComment--author" itemprop="author"><?php echo get_comment_author_link();?></span>
+            <li class="comment sulliComment" itemtype="http://schema.org/Comment" data-id="<?php comment_ID() ?>" itemscope="" itemprop="comment">
+                <div id="comment-<?php comment_ID() ?>" class="sulliComment--block">
+                    <div class="sulliComment--info">
+                        <img height=48 width=48 alt="<?php echo $comment->comment_author; ?>的头像" aria-label="<?php echo $comment->comment_author; ?>的头像" src="<?php echo get_avatar_url($comment, array('size' => 48)); ?>" class="avatar" />
+                        <span class="sulliComment--author" itemprop="author"><?php echo get_comment_author_link(); ?></span>
                     </div>
-                <div class="sulliComment--content" itemprop="description">
-                    <?php comment_text();?>
+                    <div class="sulliComment--content" itemprop="description">
+                        <?php comment_text(); ?>
+                    </div>
+                    <div class="sulliComment--footer">
+                        <?php echo '<span class="comment-reply-link u-cursorPointer" onclick="return addComment.moveForm(\'comment-' . $comment->comment_ID . '\', \'' . $comment->comment_ID . '\', \'respond\', \'' . $post->ID . '\')">reply</span>'; ?> · <span class="comment--time sulli comment-time" itemprop="datePublished" datetime="<?php echo get_comment_date('c'); ?>"><?php echo get_comment_date('M d,Y'); ?></span>
+                    </div>
                 </div>
-                <div class="sulliComment--footer">
-<?php echo '<span class="comment-reply-link u-cursorPointer" onclick="return addComment.moveForm(\'comment-' . $comment->comment_ID . '\', \'' . $comment->comment_ID . '\', \'respond\', \'' . $post->ID . '\')">reply</span>';?> · <span class="comment--time sulli comment-time" itemprop="datePublished" datetime="<?php echo get_comment_date('c');?>"><?php echo get_comment_date('M d,Y');?></span>
-                </div>
-            </div>
-            <?php
+    <?php
             break;
     endswitch;
 }
