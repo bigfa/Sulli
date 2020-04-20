@@ -476,6 +476,7 @@ label {
   display: flex;
   overflow: hidden;
   transition: 0.5s;
+  align-items: center;
 }
 
 .post .image--link img {
@@ -1169,4 +1170,27 @@ label {
 
 .mapHeader--title {
   margin: 0;
+}
+
+.page-404 {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 130px;
+}
+
+.page-404__title {
+  font-size: 124px;
+  line-height: 1;
+}
+
+.sub-menu {
+  display: none;
+  padding-left: 0;
+  color: rgba(0, 0, 0, 0.6);
+  list-style: none;
+  position: absolute;
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
 }
