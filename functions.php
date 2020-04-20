@@ -1,6 +1,8 @@
 <?php
 define('SULLI_VERSION', '0.0.2');
 
+
+include 'modules/config.php';
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -22,10 +24,7 @@ function sulli_theme_support()
     add_theme_support('post-thumbnails');
 
     // Set post thumbnail size.
-    set_post_thumbnail_size(1200, 9999);
-
-    // Add custom image size used in Cover Template.
-    add_image_size('twentytwenty-fullscreen', 1980, 9999);
+    set_post_thumbnail_size(625, 400);
 
     /*
      * Let WordPress manage the document title.
@@ -51,9 +50,6 @@ function sulli_theme_support()
             'style',
         )
     );
-
-    // Add support for full and wide align images.
-    add_theme_support('align-wide');
 
     /*
      * Adds `async` and `defer` support for scripts registered or enqueued
@@ -191,7 +187,7 @@ function aladdin_get_background_image($post_id, $width = null, $height = null)
         $output = get_post_meta($post_id, '_banner', true);
     } else {
         $content         = get_post_field('post_content', $post_id);
-        $defaltthubmnail = '//static.fatesinger.com/2018/05/q3wyes7va2ehq59y.JPG';
+        $defaltthubmnail = DEFAULT_THUMBNAIL;
         preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
         $n = count($strResult[1]);
         if ($n > 0) {
@@ -200,6 +196,10 @@ function aladdin_get_background_image($post_id, $width = null, $height = null)
             $output = $defaltthubmnail;
         }
     }
+    if (UPYUN && $width && $height) {
+        $output = $output . '!/both/' . $width . 'x' . $height;
+    }
+
     $result = $output;
 
     return $result;
