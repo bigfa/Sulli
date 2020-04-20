@@ -970,6 +970,10 @@ label {
   line-height: 1;
 }
 
+.sulliArticle--title__page {
+  text-align: center;
+}
+
 .sulliArticle--subTitle {
   font-size: 24px;
   font-weight: 200;

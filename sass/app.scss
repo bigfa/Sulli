@@ -616,6 +616,9 @@ label {
     margin-top: 0;
     margin-bottom: 10px;
     line-height: 1;
+    &__page {
+      text-align: center;
+    }
   }
 
   &--subTitle {

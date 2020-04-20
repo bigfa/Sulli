@@ -1,5 +1,5 @@
 <?php
-define('SULLI_VERSION', '0.0.1');
+define('SULLI_VERSION', '0.0.2');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -93,6 +93,11 @@ function sulli_register_scripts()
 
     wp_enqueue_script('sulli-js', get_template_directory_uri() . '/build/js/app.js', array('jquery'), $theme_version, false);
     wp_script_add_data('sulli-js', 'async', true);
+    wp_localize_script('sulli-js', 'SULLI', array(
+        'ajax_url'   => admin_url('admin-ajax.php'),
+        'order' => get_option('comment_order'),
+        'formpostion' => 'bottom', //默认为bottom，如果你的表单在顶部则设置为top。
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'sulli_register_scripts');
@@ -227,7 +232,62 @@ function sulli_comment($comment, $args, $depth)
                         <?php echo '<span class="comment-reply-link u-cursorPointer" onclick="return addComment.moveForm(\'comment-' . $comment->comment_ID . '\', \'' . $comment->comment_ID . '\', \'respond\', \'' . $post->ID . '\')">reply</span>'; ?> · <span class="comment--time sulli comment-time" itemprop="datePublished" datetime="<?php echo get_comment_date('c'); ?>"><?php echo get_comment_date('M d,Y'); ?></span>
                     </div>
                 </div>
-    <?php
+            <?php
             break;
     endswitch;
 }
+
+
+if (!function_exists('fa_ajax_comment_err')) :
+
+    function fa_ajax_comment_err($a)
+    {
+        header('HTTP/1.0 500 Internal Server Error');
+        header('Content-Type: text/plain;charset=UTF-8');
+        echo $a;
+        exit;
+    }
+
+endif;
+
+if (!function_exists('fa_ajax_comment_callback')) :
+
+    function fa_ajax_comment_callback()
+    {
+        $comment = wp_handle_comment_submission(wp_unslash($_POST));
+        if (is_wp_error($comment)) {
+            $data = $comment->get_error_data();
+            if (!empty($data)) {
+                fa_ajax_comment_err($comment->get_error_message());
+            } else {
+                exit;
+            }
+        }
+        $user = wp_get_current_user();
+        do_action('set_comment_cookies', $comment, $user);
+        $GLOBALS['comment'] = $comment; //根据你的评论结构自行修改，如使用默认主题则无需修改
+            ?>
+            <li class="comment sulliComment">
+                <article class="sulliComment--block">
+                    <div class="sulliComment--info">
+                        <?php echo get_avatar($comment, $size = '48') ?>
+
+                        <span class="sulliComment--author">
+                            <?php echo get_comment_author_link(); ?>
+                        </span>
+                    </div>
+                    <div class="sulliComment--content">
+                        <?php comment_text(); ?>
+                    </div>
+                    <div class="sulliComment--footer">
+                        <span class="comment--time sulli comment-time"><?php echo get_comment_date(); ?></span>
+                    </div>
+                </article>
+            </li>
+    <?php die();
+    }
+
+endif;
+
+add_action('wp_ajax_nopriv_ajax_comment', 'fa_ajax_comment_callback');
+add_action('wp_ajax_ajax_comment', 'fa_ajax_comment_callback');

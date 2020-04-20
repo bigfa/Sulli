@@ -17,9 +17,7 @@
 <article id="post-<?php the_ID(); ?>">
     <header class="sulliArticle--header">
         <div class="sulliContainer">
-            <h2 class="sulliArticle--title"><?php the_title(); ?></h2>
-            <div class="sulliArticle--subTitle"><?php echo get_post_meta(get_the_ID(), '_subtitle', true); ?></div>
-            <div class="sulliArticle--meta sulli "><?php echo get_the_date('Y-m-d'); ?></div>
+            <h2 class="sulliArticle--title sulliArticle--title__page"><?php the_title(); ?></h2>
         </div>
     </header>
     <div class="container">
