@@ -62,6 +62,7 @@ function sulli_theme_support()
     //$loader = new TwentyTwenty_Script_Loader();
     //add_filter( 'script_loader_tag', array( $loader, 'filter_script_loader_tag' ), 10, 2 );
 
+    add_filter('wp_calculate_image_srcset', '__return_false');
 }
 
 add_action('after_setup_theme', 'sulli_theme_support');
@@ -91,7 +92,7 @@ function sulli_register_scripts()
         wp_enqueue_script('comment-reply');
     }
 
-    wp_enqueue_script('sulli-js', get_template_directory_uri() . '/build/js/app.js', array('jquery'), $theme_version, false);
+    wp_enqueue_script('sulli-js', get_template_directory_uri() . '/build/js/app.js', array('jquery'), $theme_version, true);
     wp_script_add_data('sulli-js', 'async', true);
     wp_localize_script('sulli-js', 'SULLI', array(
         'ajax_url'   => admin_url('admin-ajax.php'),

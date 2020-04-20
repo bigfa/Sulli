@@ -68,6 +68,10 @@ img {
   height: auto !important;
 }
 
+figure {
+  margin: 0 0 30px;
+}
+
 button,
 label {
   cursor: pointer;
@@ -647,7 +651,8 @@ label {
 }
 
 .post--area,
-.comment-respond {
+.comment-respond,
+.inner--content {
   max-width: 780px;
   margin-left: auto;
   margin-right: auto;
@@ -868,4 +873,80 @@ label {
       display: block;
     }
   }
+}
+
+.sulli--insertImage {
+  margin: 15px -200px;
+}
+
+.tag--list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  a {
+    padding: 2px 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.screen-reader-text {
+  position: absolute;
+  left: -9999em;
+  top: -9999em;
+}
+
+.post-navigation {
+  padding: 3px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-navigation .meta-nav {
+  display: block;
+  color: rgba(0, 0, 0, 0.44);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.post-navigation .nav-next,
+.post-navigation .nav-previous {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.post-navigation .nav-next:only-child,
+.post-navigation .nav-previous:only-child {
+  text-align: center;
+  width: 100%;
+}
+
+.post-navigation .nav-next a,
+.post-navigation .nav-previous a {
+  position: relative;
+  display: block;
+}
+
+.post-navigation .nav-next a:hover .post-title,
+.post-navigation .nav-previous a:hover .post-title {
+  color: $colorPrimary;
+}
+
+.post-navigation .nav-previous {
+  float: left;
+  border-right: 1px #fff solid;
+}
+
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  border-left: 1px #fff solid;
 }

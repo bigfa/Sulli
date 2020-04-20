@@ -38,6 +38,13 @@
 		<div class="post--area sulliGrap">
 			<?php the_content(); ?>
 		</div>
+		<div class="inner--content">
+			<?php echo get_the_tag_list('<div class="tag--list">', '', '</div>'); ?>
+			<?php the_post_navigation(array(
+				'next_text' => '<span class="meta-nav">Next</span><span class="post-title">%title</span>',
+				'prev_text' => '<span class="meta-nav">Previous</span><span class="post-title">%title</span>',
+			)); ?>
+		</div>
 	</div>
 	<?php
 	/**
