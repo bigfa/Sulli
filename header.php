@@ -26,13 +26,23 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<header class="sulli--header">
-		<div class="sulli--header__content">
-			<a href="/"><img src="<?php echo get_template_directory_uri() ?>/build/img/logo.png" width="64"></a>
-			<nav class="sulli--nav sulli">
-				<?php if (has_nav_menu('primary')) : ?>
-					<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'sulli--menu', 'container' => 'ul')); ?>
-				<?php endif; ?>
-			</nav>
+	<div class="surface--content">
+		<div class="search--area">
+			<div class="container">
+				<form role="search" method="get" class="search-form" action="<?php echo home_url(); ?>">
+					<input type="search" class="search-field" placeholder="输入内容回车搜索" value="" name="s">
+				</form>
+			</div>
 		</div>
-	</header>
+		<div class="block--area">
+			<header class="sulli--header">
+				<div class="sulli--header__content">
+					<a href="/"><img src="<?php echo get_template_directory_uri() ?>/build/img/logo.png" width="64"></a>
+					<nav class="sulli--nav sulli">
+						<?php if (has_nav_menu('primary')) : ?>
+							<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'sulli--menu', 'container' => 'ul')); ?>
+						<?php endif; ?>
+						<a href="javascript:;" class="sulli sulli--searchBtn">Search</a>
+					</nav>
+				</div>
+			</header>

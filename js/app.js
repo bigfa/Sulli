@@ -1,4 +1,14 @@
 +(function($) {
+	$(document).on('click','.sulli--searchBtn', function (e) {
+		e.preventDefault();
+		let $body = $('body');
+		if ( $body.hasClass('is-searchActive') ) {
+			$body.removeClass('is-searchActive');
+		} else {
+			$body.addClass('is-searchActive');
+			$('.search-field').focus();
+		}
+	});
   var __cancel = jQuery('#cancel-comment-reply-link'),
 		__cancel_text = __cancel.text(),
 		__list = 'sulliComment--list';//your comment wrapprer

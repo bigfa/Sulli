@@ -18,7 +18,8 @@
 		Just a <a href="https://fatesinger.com" target="_blank">bigfa</a> theme.
 	</div>
 </footer>
-
+</div>
+</div>
 <?php wp_footer(); ?>
 
 </body>

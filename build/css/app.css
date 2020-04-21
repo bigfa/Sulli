@@ -1280,3 +1280,58 @@ label {
   text-align: right;
   border-left: 1px #fff solid;
 }
+
+.search--area {
+  background-color: #fafafa;
+  padding: 50px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translate3d(0, -100%, 0);
+  transition: 0.5s;
+}
+
+.is-searchActive .search--area {
+  transform: translate3d(0, 0, 0);
+}
+
+.block--area {
+  transform: translate3d(0, 0, 0);
+  transition: 0.5s;
+}
+
+.is-searchActive .block--area {
+  transform: translate3d(0, 128px, 0);
+}
+
+.surface--content {
+  position: relative;
+}
+
+.sulli--searchBtn {
+  margin-left: 15px;
+  background-color: #cf3f74;
+  border-radius: 999rem;
+  padding: 2px 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.search-form .search-field {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-form .search-submit {
+  margin-left: auto;
+  background-color: black;
+  color: #fff;
+  border: 0;
+  font-size: 12px;
+  font-family: "oxaniumregular";
+}
