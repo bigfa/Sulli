@@ -1335,3 +1335,30 @@ label {
   font-size: 12px;
   font-family: "oxaniumregular";
 }
+
+.alignleft {
+  float: left;
+  margin-right: 15px;
+}
+
+.alignright {
+  float: right;
+  margin-left: 15px;
+}
+
+.page-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.page-links .post-page-numbers {
+  font-size: 18px;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.page-links .post-page-numbers.current, .page-links .post-page-numbers:hover {
+  color: #cf3f74;
+}

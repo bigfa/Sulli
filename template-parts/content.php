@@ -39,6 +39,14 @@
 			<?php the_content(); ?>
 		</div>
 		<div class="inner--content">
+			<?php wp_link_pages(array(
+				'before'      => '<div class="page-links sulli">',
+				'after'       => '</div>',
+				'link_before' => '<span class="page-link-item">',
+				'link_after'  => '</span>',
+				'pagelink'    => '%',
+				'separator'   => '<span class="screen-reader-text">, </span>',
+			)); ?>
 			<?php echo get_the_tag_list('<div class="tag--list">', '', '</div>'); ?>
 			<?php the_post_navigation(array(
 				'next_text' => '<span class="meta-nav">Next</span><span class="post-title">%title</span>',
