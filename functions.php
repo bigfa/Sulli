@@ -1,5 +1,5 @@
 <?php
-define('SULLI_VERSION', '0.0.2');
+define('SULLI_VERSION', '0.1.1');
 
 
 include 'modules/config.php';
@@ -316,3 +316,21 @@ function sulli_hide_status($query)
     return $query;
 }
 add_action('pre_get_posts', 'sulli_hide_status');
+
+function get_post_images($post_id = null)
+{
+    if (!UPYUN) return;
+    global  $post;
+    $content         = get_post_field('post_content', $post_id);
+    $output = '<div class="card--statusImage--list">';
+    preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+    $n = count($strResult[1]);
+    if ($n > 0) {
+        foreach ($strResult[1] as $key => $value) {
+            $output .= '<img src="' . $value . '!/both/150x150" class="card--statusImage--thumb">';
+        }
+    }
+    $output .= '</div>';
+
+    return $output;
+}

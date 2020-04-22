@@ -28,8 +28,15 @@ get_header();
                     <?php echo get_avatar(get_the_author_meta('ID'), 64); ?><div class="meta sulli"><?php echo get_the_date('Y-m-d'); ?></div>
                 </header>
                 <div class="card--status__content">
-                    <?php the_content(); ?>
+                    <?php
+                    $content = get_post_field('post_content', get_the_ID());
+                    $content = preg_replace('/<\s*img\s+[^>]*?src\s*=\s*(\'|\")(.*?)\\1[^>]*?\/?\s*>/i', '', $content);
+                    echo apply_filters('the_content', $content);
+                    //the_content(); 
+                    ?>
                 </div>
+                <?php echo get_post_images(get_the_ID()); ?>
+                <footer class="card--status__footer sulli"><a href="<?php the_permalink(); ?>">Replies <?php echo get_comments_number(); ?></a></footer>
             </article>
         <?php     } ?>
     </section>

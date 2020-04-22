@@ -747,6 +747,14 @@ label {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.sulliGrap a {
+  text-decoration: underline;
+}
+
+.sulliGrap a:hover {
+  color: #cf3f74;
+}
+
 .sulliGrap b,
 .sulliGrap strong {
   background-image: linear-gradient(to right, rgba(247, 239, 7, 0.9) 100%, rgba(0, 0, 0, 0.84) 0);
@@ -1383,4 +1391,26 @@ label {
 
 .card--status__content {
   font-size: 14px;
+}
+
+.card--status__footer {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  padding-top: 10px;
+}
+
+.card--status__footer a:hover {
+  color: #cf3f74;
+}
+
+.card--statusImage--list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card--statusImage--thumb {
+  margin-right: 15px;
+  border-radius: 5px;
 }
