@@ -1362,3 +1362,25 @@ label {
 .page-links .post-page-numbers.current, .page-links .post-page-numbers:hover {
   color: #cf3f74;
 }
+
+.card--status {
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card--status__header {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.card--status__header .avatar {
+  border-radius: 999rem;
+  margin-right: 15px;
+}
+
+.card--status__content {
+  font-size: 14px;
+}

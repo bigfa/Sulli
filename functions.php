@@ -34,6 +34,12 @@ function sulli_theme_support()
      */
     add_theme_support('title-tag');
 
+
+    add_theme_support('post-formats', array('status'));
+
+
+
+
     /*
      * Switch default core markup for search form, comment form, and comments
      * to output valid HTML5.
@@ -292,3 +298,21 @@ endif;
 
 add_action('wp_ajax_nopriv_ajax_comment', 'fa_ajax_comment_callback');
 add_action('wp_ajax_ajax_comment', 'fa_ajax_comment_callback');
+
+
+function sulli_hide_status($query)
+{
+    if ($query->is_home() && $query->is_main_query()) {
+        $tax_query = [
+            [
+                'taxonomy' => 'post_format',
+                'field' => 'slug',
+                'terms' => array('post-format-status'),
+                'operator' => 'NOT IN',
+            ]
+        ];
+        $query->set('tax_query', $tax_query);
+    }
+    return $query;
+}
+add_action('pre_get_posts', 'sulli_hide_status');

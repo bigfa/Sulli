@@ -1030,3 +1030,22 @@ label {
     }
   }
 }
+
+.card--status {
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  &__header {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    .avatar {
+      border-radius: 999rem;
+      margin-right: 15px;
+    }
+  }
+  &__content {
+    font-size: 14px;
+  }
+}
