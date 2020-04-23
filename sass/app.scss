@@ -279,6 +279,19 @@ label {
   top: 0;
   width: 350px;
 
+  &__author {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    .avatar {
+      border-radius: 100%;
+      margin-right: 20px;
+      margin-left: auto;
+    }
+  }
+
   .archive-title {
     margin: 0;
     font-size: 24px;
@@ -1121,4 +1134,15 @@ label {
       border-bottom: 0;
     }
   }
+}
+
+.u-flex {
+  display: flex;
+  align-items: center;
+}
+
+.upyun--link {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
