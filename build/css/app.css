@@ -1,4 +1,11 @@
 @charset "UTF-8";
+:root {
+  --dark-background: #292a2d;
+  --dark-background-secondary: #3b3d42;
+  --dark-color: #a9a9b3;
+  --dark-color-secondary: #73747b;
+}
+
 /*! normalize.scss v0.1.0 | MIT License | based on git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -906,7 +913,7 @@ label {
   position: relative;
 }
 
-.sulli--nav .menu-item:hover {
+.sulli--nav .menu-item:not(.menu-item-has-children):hover {
   opacity: 0.7;
 }
 
@@ -921,6 +928,23 @@ label {
   height: 4px;
   border-radius: 4px;
   background: #cf3f74;
+}
+
+.sulli--nav .sub-menu .menu-item {
+  margin: 0;
+}
+
+.sulli--nav .sub-menu .menu-item:hover {
+  color: #cf3f74;
+  opacity: 1;
+}
+
+.sulli--nav .sub-menu .menu-item a {
+  display: block;
+}
+
+.sulli--nav .sub-menu .menu-item.current_page_item::before {
+  display: none;
 }
 
 .sulli--header {
@@ -1485,4 +1509,9 @@ label {
   margin-left: auto;
   display: flex;
   align-items: center;
+}
+
+.is-dardMode {
+  background-color: var(--dark-background);
+  color: var(--dark-color);
 }

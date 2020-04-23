@@ -21,7 +21,7 @@
 				<div class="elevateAuthor">
 					<div class="elevateAuthor--top sulli">
 						<?php echo get_avatar(get_the_author_meta('ID'), 36); ?>
-						<?php the_author(); ?></div>
+						<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a></div>
 					<p class="sulli"><?php echo get_the_author_meta('description'); ?></p>
 				</div>
 			</div>
