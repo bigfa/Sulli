@@ -30,7 +30,7 @@ get_header();
             <?php while (have_posts()) {
                 the_post(); ?>
                 <article class="sulliTag--item">
-                    <a href="<?php the_permalink(); ?>" class="sulliTag--image"><img src="<?php echo aladdin_get_background_image(get_the_ID()); ?>"></a>
+                    <a href="<?php the_permalink(); ?>" class="sulliTag--image"><img src="<?php echo aladdin_get_background_image(get_the_ID(), 500, 320); ?>"></a>
                     <div class="sulliTag--content">
                         <h2 class="sulliTag--title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <div class="sulliTag--meta sulli"><?php echo get_the_date('Y-m-d'); ?></div>

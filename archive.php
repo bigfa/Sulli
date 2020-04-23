@@ -27,14 +27,13 @@ get_header();
 			?>
 		</header>
 		<?php while (have_posts()) {
-
 			the_post(); ?>
 			<article class="card--item">
 				<div class="card--content">
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<div class="meta sulli"><?php echo get_the_date('Y-m-d'); ?></div>
 				</div>
-				<a href="<?php the_permalink(); ?>" class="card--image"><img src="<?php echo aladdin_get_background_image(get_the_ID()); ?>"></a>
+				<a href="<?php the_permalink(); ?>" class="card--image"><img src="<?php echo aladdin_get_background_image(get_the_ID(), 300, 200); ?>"></a>
 			</article>
 		<?php 	} ?>
 	</section>

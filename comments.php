@@ -21,7 +21,7 @@ if (post_password_required()) {
 if ($comments) {
 ?>
 
-	<div class="comments post--area" id="comments">
+	<div class="comments inner--content" id="comments">
 
 		<?php
 		$comments_number = absint(get_comments_number());

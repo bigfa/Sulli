@@ -655,6 +655,9 @@ label {
 .post--area {
   padding-bottom: 30px;
   min-height: 400px;
+  &__status {
+    padding-top: 50px;
+  }
 }
 
 .post--area,
@@ -1043,6 +1046,9 @@ label {
   padding: 30px;
   margin-bottom: 30px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  &:last-child {
+    margin-bottom: 0;
+  }
   &__header {
     display: flex;
     align-items: center;
@@ -1077,5 +1083,42 @@ label {
   &--thumb {
     margin-right: 15px;
     border-radius: 5px;
+  }
+}
+
+.comment-form-cookies-consent {
+  display: none;
+}
+
+.archive {
+  &--title {
+    &__month {
+      margin: 30px 0 10px;
+      font-size: 24px;
+      font-weight: normal;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    &__year {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+  &--list {
+    list-style: none;
+    padding: 0;
+  }
+  &--item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    &Title {
+      font-size: 20px;
+    }
+    &Meta {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 }

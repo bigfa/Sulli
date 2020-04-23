@@ -1010,6 +1010,10 @@ label {
   min-height: 400px;
 }
 
+.post--area__status {
+  padding-top: 50px;
+}
+
 .post--area,
 .comment-respond,
 .inner--content {
@@ -1378,6 +1382,10 @@ label {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.card--status:last-child {
+  margin-bottom: 0;
+}
+
 .card--status__header {
   display: flex;
   align-items: center;
@@ -1413,4 +1421,43 @@ label {
 .card--statusImage--thumb {
   margin-right: 15px;
   border-radius: 5px;
+}
+
+.comment-form-cookies-consent {
+  display: none;
+}
+
+.archive--title__month {
+  margin: 30px 0 10px;
+  font-size: 24px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.archive--title__year {
+  font-size: 30px;
+  margin: 0;
+}
+
+.archive--list {
+  list-style: none;
+  padding: 0;
+}
+
+.archive--item {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.archive--itemTitle {
+  font-size: 20px;
+}
+
+.archive--itemMeta {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.archive--item:last-child {
+  border-bottom: 0;
 }
