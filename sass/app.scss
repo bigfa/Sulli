@@ -114,6 +114,7 @@ label {
     overflow: hidden;
     transition: 0.5s;
     align-items: center;
+
     img {
       transition: 0.5s;
     }
@@ -292,6 +293,7 @@ label {
     font-size: 18px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.6);
+
     .avatar {
       border-radius: 100%;
       margin-right: 20px;
@@ -399,6 +401,7 @@ label {
 
   a {
     text-decoration: underline;
+
     &:hover {
       color: $colorPrimary;
     }
@@ -571,16 +574,20 @@ label {
       }
     }
   }
+
   .sub-menu {
     .menu-item {
       margin: 0;
+
       &:hover {
         color: $colorPrimary;
         opacity: 1;
       }
+
       a {
         display: block;
       }
+
       &.current_page_item {
         &::before {
           display: none;
@@ -664,6 +671,7 @@ label {
     margin-top: 0;
     margin-bottom: 10px;
     line-height: 1;
+
     &__page {
       text-align: center;
     }
@@ -692,6 +700,7 @@ label {
 .post--area {
   padding-bottom: 30px;
   min-height: 400px;
+
   &__status {
     padding-top: 50px;
   }
@@ -891,6 +900,7 @@ label {
 
 .mapHeader {
   padding: 0px 0 50px;
+
   &--title {
     margin: 0;
   }
@@ -900,6 +910,7 @@ label {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 130px;
+
   &__title {
     font-size: 124px;
     line-height: 1;
@@ -931,6 +942,7 @@ label {
   align-items: center;
   flex-wrap: wrap;
   padding: 30px 0;
+
   a {
     padding: 2px 12px;
     border-radius: 4px;
@@ -1007,6 +1019,7 @@ label {
   right: 0;
   transform: translate3d(0, -100%, 0);
   transition: 0.5s;
+
   .is-searchActive & {
     transform: translate3d(0, 0, 0);
   }
@@ -1014,9 +1027,11 @@ label {
 
 .block--area {
   transform: translate3d(0, 0, 0);
+
   .is-searchActive & {
     transform: translate3d(0, 128px, 0);
   }
+
   transition: 0.5s;
 }
 
@@ -1042,6 +1057,7 @@ label {
     font-size: 16px;
     color: rgba(0, 0, 0, 0.6);
   }
+
   .search-submit {
     margin-left: auto;
     background-color: rgba(0, 0, 0, 1);
@@ -1067,10 +1083,12 @@ label {
   align-items: center;
   justify-content: center;
   padding-bottom: 15px;
+
   .post-page-numbers {
     font-size: 18px;
     padding: 10px;
     color: rgba(0, 0, 0, 0.6);
+
     &.current,
     &:hover {
       color: $colorPrimary;
@@ -1083,18 +1101,22 @@ label {
   padding: 30px;
   margin-bottom: 30px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+
   &:last-child {
     margin-bottom: 0;
   }
+
   &__header {
     display: flex;
     align-items: center;
     color: rgba(0, 0, 0, 0.5);
+
     .avatar {
       border-radius: 999rem;
       margin-right: 15px;
     }
   }
+
   &__content {
     font-size: 14px;
   }
@@ -1104,6 +1126,7 @@ label {
     color: rgba(0, 0, 0, 0.5);
     display: flex;
     padding-top: 10px;
+
     a:hover {
       color: $colorPrimary;
     }
@@ -1135,25 +1158,31 @@ label {
       font-weight: normal;
       color: rgba(0, 0, 0, 0.5);
     }
+
     &__year {
       font-size: 30px;
       margin: 0;
     }
   }
+
   &--list {
     list-style: none;
     padding: 0;
   }
+
   &--item {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+
     &Title {
       font-size: 20px;
     }
+
     &Meta {
       font-size: 14px;
       color: rgba(0, 0, 0, 0.5);
     }
+
     &:last-child {
       border-bottom: 0;
     }
@@ -1174,4 +1203,19 @@ label {
 .is-dardMode {
   background-color: var(--dark-background);
   color: var(--dark-color);
+}
+
+.comment--navigation {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+  a {
+    padding: 15px;
+    color: rgba(0, 0, 0, 0.6);
+
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
 }

@@ -50,6 +50,16 @@ if ($comments) {
 			</ul>
 		</div><!-- .comments-inner -->
 	</div><!-- comments -->
+
+	<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through? 
+	?>
+		<nav id="comment-nav-below" class="comment--navigation sulli inner--content" role="navigation">
+			<?php previous_comments_link('Older Comments'); ?>
+			<?php next_comments_link('Newer Comments'); ?>
+		</nav>
+	<?php endif; // Check for comment navigation. 
+	?>
+
 <?php
 }
 

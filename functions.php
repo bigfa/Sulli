@@ -1,5 +1,5 @@
 <?php
-define('SULLI_VERSION', '0.1.4');
+define('SULLI_VERSION', '0.1.5');
 
 
 include 'modules/config.php';
@@ -327,7 +327,7 @@ function get_post_images($post_id = null)
     $n = count($strResult[1]);
     if ($n > 0) {
         foreach ($strResult[1] as $key => $value) {
-            $output .= '<img src="' . $value . '!/both/150x150" class="card--statusImage--thumb">';
+            $output .= '<img src="' . $value . '!/both/150x150" data-original="' . $value . '" class="card--statusImage--thumb"  data-action="zoom" >';
         }
     }
     $output .= '</div>';

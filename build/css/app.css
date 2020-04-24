@@ -1515,3 +1515,18 @@ label {
   background-color: var(--dark-background);
   color: var(--dark-color);
 }
+
+.comment--navigation {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.comment--navigation a {
+  padding: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.comment--navigation a:hover {
+  color: #cf3f74;
+}
