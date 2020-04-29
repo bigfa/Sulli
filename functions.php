@@ -204,6 +204,8 @@ function aladdin_get_background_image($post_id, $width = null, $height = null)
     }
     if (UPYUN && $width && $height) {
         $output = $output . '!/both/' . $width . 'x' . $height;
+    } elseif (QINIU && $width && $height) {
+        $output = $output . '?imageView2/1/w/' . $width . '/h/' . $height;
     }
 
     $result = $output;
