@@ -477,10 +477,50 @@ label {
   padding-top: 100px;
 }
 
+.post--list__card {
+  max-width: 780px;
+  padding-top: 20px;
+}
+
+.is-textMode .posts-nav {
+  max-width: 780px;
+}
+
+.is-textMode.home .site--footer .container {
+  max-width: 780px;
+}
+
 .post {
   width: 48%;
   text-align: center;
   margin-bottom: 5%;
+}
+
+.post--list__card .post {
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 50px;
+}
+
+.post--list__card .post:last-child {
+  border-bottom: 0;
+}
+
+.post--list__card .post h2 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.post--list__card .post .more {
+  font-size: 14px;
+  color: #cf3f74;
+}
+
+.post--list__card .post .snipper {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .post .image--link {
@@ -1529,4 +1569,9 @@ label {
 
 .comment--navigation a:hover {
   color: #cf3f74;
+}
+
+.comment-notes {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
 }

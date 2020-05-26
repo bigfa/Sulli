@@ -336,3 +336,12 @@ function get_post_images($post_id = null)
 
     return $output;
 }
+
+function sulli_body_class($classes, $class)
+{
+    if (TEXT_MODE) $classes[] = 'is-textMode';
+
+    return $classes;
+}
+
+add_filter('body_class', 'sulli_body_class', 10, 2);

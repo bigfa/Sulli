@@ -19,20 +19,11 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-	<section class="container post--list">
-		<?php while (have_posts()) {
-
-			the_post(); ?>
-			<article class="post">
-				<a href="<?php the_permalink(); ?>" class="image--link"><img src="<?php echo aladdin_get_background_image(get_the_ID(), 625, 400); ?>"></a>
-
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<div class="meta sulli"><?php echo get_the_date('Y-m-d'); ?></div>
-			</article>
-
-
-		<?php 	} ?>
-	</section>
+	<?php if (TEXT_MODE) {
+		get_template_part('template-parts/text');
+	} else {
+		get_template_part('template-parts/card');
+	} ?>
 	<div class="posts-nav container sulli">
 		<?php echo paginate_links(array(
 			'prev_next'          => 0,

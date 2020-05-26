@@ -102,9 +102,50 @@ label {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 100px;
+  &__card {
+    max-width: 780px;
+    padding-top: 20px;
+  }
+}
+
+.is-textMode {
+  .posts-nav {
+    max-width: 780px;
+  }
+  &.home {
+    .site--footer {
+      .container {
+        max-width: 780px;
+      }
+    }
+  }
 }
 
 .post {
+  .post--list__card & {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 50px;
+    &:last-child {
+      border-bottom: 0;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+    }
+
+    .more {
+      font-size: 14px;
+      color: $colorPrimary;
+    }
+
+    .snipper {
+      margin-bottom: 15px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  }
   width: 48%;
   text-align: center;
   margin-bottom: 5%;
@@ -1218,4 +1259,9 @@ label {
       color: $colorPrimary;
     }
   }
+}
+
+.comment-notes {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
 }
