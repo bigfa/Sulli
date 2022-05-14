@@ -1,5 +1,5 @@
 <?php
-define('SULLI_VERSION', '1.0.1');
+define('SULLI_VERSION', '1.0.2');
 
 
 include 'modules/config.php';

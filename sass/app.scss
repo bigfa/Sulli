@@ -865,6 +865,21 @@ label {
         }
     }
 
+    .card--list {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+    }
+
+    .archive-header {
+        position: static;
+        width: auto;
+        margin-bottom: 30px;
+        .avatar {
+            margin-left: 0;
+        }
+    }
+
     .elevateMeta {
         display: none;
     }
