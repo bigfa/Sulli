@@ -25,38 +25,56 @@ $zIndex-10: 1000;
     --dark-color-secondary: #73747b;
 }
 
-@import "node_modules/normalize.scss/normalize.scss";
+@import 'node_modules/normalize.scss/normalize.scss';
 
 @font-face {
-    font-family: dinmedium;
-    src: url(../fonts/din-medium-webfont.eot);
-    src: url(../fonts/din-medium-webfont.eot?#iefix) format("embedded-opentype"),
-        url(../fonts/din-medium-webfont.woff) format("woff"),
-        url(../fonts/din-medium-webfont.ttf) format("truetype"),
-        url(../fonts/din-medium-webfont.svg#dinmedium) format("svg");
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "oxaniumregular";
-    src: url("../fonts/oxanium-regular-webfont.woff2") format("woff2"),
-        url("../fonts/oxanium-regular-webfont.woff") format("woff");
-    font-weight: normal;
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Light.woff2') format('woff2'),
+        url('../fonts/OpenSans-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Medium.woff2') format('woff2'),
+        url('../fonts/OpenSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 .JiEun {
-    font-family: "dinmedium";
+    font-family: 'Open Sans';
 }
 
 body {
     line-height: 1.8;
     color: rgba(0, 0, 0, 0.8);
-    font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti, WenQuanYi Micro Hei,
-        Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
+        WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    font-weight: 400;
 }
 
 a {
@@ -202,7 +220,7 @@ label {
     label {
         display: block;
         font-size: 14px;
-        font-family: "oxaniumregular";
+        font-family: 'Open Sans';
     }
 
     input {
@@ -212,9 +230,9 @@ label {
         color: rgba(0, 0, 0, 0.5);
         border-radius: 4px;
 
-        &[type="submit"] {
+        &[type='submit'] {
             color: #fff;
-            font-family: "oxaniumregular";
+            font-family: 'Open Sans';
 
             &:hover {
                 background-color: rgba(0, 0, 0, 0.6);
@@ -244,7 +262,7 @@ label {
 
 .comment-reply-title {
     font-size: 24px;
-    font-family: "oxaniumregular";
+    font-family: 'Open Sans';
     font-weight: normal;
     color: rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
@@ -253,7 +271,7 @@ label {
 .comment-reply-link {
     font-size: 14px;
     color: $colorPrimaryLight;
-    font-family: "oxaniumregular";
+    font-family: 'Open Sans';
     text-transform: uppercase;
     cursor: pointer;
 
@@ -472,7 +490,7 @@ label {
         color: rgba(0, 0, 0, 0.5);
 
         &:after {
-            content: "- -";
+            content: '- -';
             display: block;
         }
     }
@@ -492,7 +510,7 @@ label {
         font-size: 16px;
 
         &:before {
-            content: "•";
+            content: '•';
             box-sizing: border-box;
             font-size: 14px;
             margin-left: -28px;
@@ -528,7 +546,7 @@ label {
         //color: rgba(0, 0, 0, 0.5);
         &:before {
             color: $colorPrimary;
-            content: "#";
+            content: '#';
             //font-size: 18px;
             margin-left: -15px;
             padding-right: 10px;
@@ -607,7 +625,7 @@ label {
 
         &.current_page_item {
             &:before {
-                content: "";
+                content: '';
                 position: absolute;
                 top: 34px;
                 left: 0;
@@ -707,7 +725,7 @@ label {
 }
 
 .sulli {
-    font-family: "oxaniumregular";
+    font-family: 'Open Sans';
 }
 
 .sulliArticle {
@@ -1142,7 +1160,7 @@ label {
         color: #fff;
         border: 0;
         font-size: 12px;
-        font-family: "oxaniumregular";
+        font-family: 'Open Sans';
     }
 }
 

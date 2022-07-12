@@ -1,5 +1,5 @@
 <?php
-define('SULLI_VERSION', '1.0.2');
+define('SULLI_VERSION', '1.0.3');
 
 
 include 'modules/config.php';
@@ -77,7 +77,7 @@ function sulli_register_styles()
 
     $theme_version = wp_get_theme()->get('Version');
 
-    wp_enqueue_style('sulli-style', get_template_directory_uri() . '/build/css/app.css', array(), $theme_version);
+    wp_enqueue_style('sulli-style', get_template_directory_uri() . '/build/css/misc.css', array(), $theme_version);
 }
 
 add_action('wp_enqueue_scripts', 'sulli_register_styles');
