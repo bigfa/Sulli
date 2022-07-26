@@ -10,20 +10,13 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const sass = require('gulp-sass')(require('sass'));
 const rename = require('gulp-rename');
-const eslint = require('gulp-eslint');
-
-// Lint scripts
-function scriptsLint() {
-    return gulp
-        .src(['./assets/js/**/*'])
-        .pipe(plumber())
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
-}
 
 function fonts() {
     return gulp.src('./fonts/*').pipe(gulp.dest('./build/fonts/'));
+}
+
+function images() {
+    return gulp.src('./images/*').pipe(gulp.dest('./build/img/'));
 }
 
 function css() {
@@ -53,14 +46,14 @@ function scripts() {
 
 // Watch files
 function watchFiles() {
-    gulp.watch(['./js/app.js'], gulp.series(scriptsLint, scripts));
-    gulp.watch(['./scss/*'], gulp.series(css));
+    gulp.watch(['./js/app.js'], gulp.series(scripts));
+    gulp.watch(['./scss/*', './scss/modules/*'], gulp.series(css));
 }
 
 // define complex tasks
-const js = gulp.series(scriptsLint, scripts);
+const js = gulp.series(scripts);
 const watch = gulp.parallel(watchFiles);
-const build = gulp.parallel(watch, gulp.parallel(css, js, fonts));
+const build = gulp.parallel(watch, gulp.parallel(css, js, fonts, images));
 
 exports.css = css;
 exports.js = js;

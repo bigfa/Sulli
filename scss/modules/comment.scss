@@ -1,0 +1,114 @@
+.sulliComment {
+    .avatar {
+        border-radius: 100%;
+        margin-right: 15px;
+    }
+
+    &--block {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 25px 0;
+    }
+
+    &--list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    &-metadata {
+        display: none;
+    }
+
+    &--info {
+        display: flex;
+        align-items: center;
+    }
+
+    &--author {
+        font-weight: normal;
+        color: $colorPrimary;
+    }
+
+    &--footer {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    &--content {
+        font-size: 14px;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-bottom: 20px;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.required {
+    color: #cc0000;
+}
+
+.comment-reply-title {
+    font-size: 24px;
+    font-family: 'Open Sans';
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.comment-reply-link {
+    font-size: 14px;
+    color: $colorPrimaryLight;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        color: $colorPrimary;
+    }
+}
+
+.children {
+    list-style: none;
+    margin-left: 50px;
+}
+
+.comment--navigation {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+    a {
+        padding: 15px;
+        color: rgba(0, 0, 0, 0.6);
+
+        &:hover {
+            color: $colorPrimary;
+        }
+    }
+}
+
+.comment-notes {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+
+.comment-form-cookies-consent {
+    display: none;
+}
+
+.says {
+    display: none;
+}
+
+.submit {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 0;
+    padding: 10px 30px !important;
+    border-radius: 4px;
+}

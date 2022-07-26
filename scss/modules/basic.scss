@@ -1,0 +1,91 @@
+body {
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
+        WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button,
+textarea {
+    -webkit-appearance: none;
+    outline: none;
+}
+
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+figure {
+    margin: 0 0 30px;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+}
+
+.u-relative {
+    position: relative;
+}
+
+.mapHeader {
+    padding: 0px 0 50px;
+
+    &--title {
+        margin: 0;
+    }
+}
+
+.screen-reader-text {
+    position: absolute;
+    left: -9999em;
+    top: -9999em;
+}
+
+.search-form {
+    .search-field {
+        border: 0;
+        background-color: rgba(0, 0, 0, 0);
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .search-submit {
+        margin-left: auto;
+        background-color: rgba(0, 0, 0, 1);
+        color: #fff;
+        border: 0;
+        font-size: 12px;
+        font-family: 'Open Sans';
+    }
+}
+
+.u-flex {
+    display: flex;
+    align-items: center;
+}
+
+.upyun--link {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
