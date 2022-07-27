@@ -31,10 +31,9 @@ if ($comments) {
 
 			<h2 class="comment-reply-title">
 				Comments
-			</h2><!-- .comments-title -->
+			</h2>
 
-		</div><!-- .comments-header -->
-
+		</div>
 		<div class="comments-inner section-inner thin max-percentage">
 			<ul class="comment--list sulliComment--list">
 				<?php
@@ -48,8 +47,8 @@ if ($comments) {
 				);
 				?>
 			</ul>
-		</div><!-- .comments-inner -->
-	</div><!-- comments -->
+		</div>
+	</div>
 
 	<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through? 
 	?>
@@ -57,7 +56,7 @@ if ($comments) {
 			<?php previous_comments_link('Older Comments'); ?>
 			<?php next_comments_link('Newer Comments'); ?>
 		</nav>
-	<?php endif; // Check for comment navigation. 
+	<?php endif;
 	?>
 
 <?php

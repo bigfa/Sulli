@@ -21,7 +21,6 @@ get_header();
 <main id="site-content" role="main" class="container ">
     <section class="card--list">
         <?php while (have_posts()) {
-
             the_post(); ?>
             <article class="card--status">
                 <header class="card--status__header">
